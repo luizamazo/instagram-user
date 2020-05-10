@@ -25,10 +25,7 @@ module.exports = async username => {
 			website: user.external_url
 		};
 	} catch (error) {
-		if (error.response.statusCode === 404) {
-			error.message = `User "${username}" not found`;
-		}
-
+		console.error(error)
 		throw error;
 	}
 };
